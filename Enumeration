@@ -18,8 +18,9 @@ port 139,445
 	nmap
 	smbmap
 	smbclient
-	msfconsole auxiliary scans
+	msfconsole auxiliary scans to get version,shares,etc.
 	impackets psexec
+	smb exploits - eternal blue ,etc.
 
 port 53,88,389,464,3268,3269 (kerberos,ldap)
 	ldapsearch
