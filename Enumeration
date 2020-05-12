@@ -1,0 +1,33 @@
+port 80,443 or any http/https port (eg. 8080)
+	nmap
+	nikto -host ip -port port
+	gobuster dir scan
+	gobuster vhost scan
+	edit /etc/hosts
+	dirbuster
+	analyse cookies,requests with burpsuite
+	bruteforce credentials with hydra
+	web vuln - lfi,rfi,sql,xss,code execution,file upload,xxe
+	javascript files
+	view-source
+	examine exifdata of images
+	switch GET with POST
+	scrape potential usernames, generate usernames list from scraped users' full names
+
+port 139,445
+	nmap
+	smbmap
+	smbclient
+	msfconsole auxiliary scans
+	impackets psexec
+
+port 53,88,389,464,3268,3269 (kerberos,ldap)
+	ldapsearch
+	enum4linux
+	kerbrute
+	imacket GetNPUsers
+	impacket GetUserSPNS
+	rpcclient
+	impacket lookupsid
+	msfconsole kerberos
+	https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md
