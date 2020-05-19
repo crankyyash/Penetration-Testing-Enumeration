@@ -5,6 +5,7 @@ port 80,443 or any http/https port (eg. 8080)
 	gobuster vhost scan
 	edit /etc/hosts
 	dirbuster
+	wfuzz file extensions
 	analyse cookies,requests with burpsuite
 	bruteforce credentials with hydra
 	web vuln - lfi,rfi,sql,xss,code execution,file upload,xxe
@@ -13,14 +14,26 @@ port 80,443 or any http/https port (eg. 8080)
 	examine exifdata of images
 	switch GET with POST
 	scrape potential usernames, generate usernames list from scraped users' full names
+	searchsploit
+
+port 110 pop3
+	telnet ip port
+		LIST
+		RETR <msg-id>
+		QUIT
+	searchsploit
+	msfconsole
 
 port 139,445
-	nmap
+	nmap scripts
 	smbmap
 	smbclient
 	msfconsole auxiliary scans to get version,shares,etc.
-	impackets psexec
+	impackets psexec,lookupsid
 	smb exploits - eternal blue ,netapietc : look at os version
+	searchsploit
+	rpcclient
+	enum4linux
 
 port 53,88,389,464,3268,3269 (kerberos,ldap)
 	ldapsearch
