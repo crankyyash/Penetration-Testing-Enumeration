@@ -20,7 +20,7 @@ port 139,445
 	smbclient
 	msfconsole auxiliary scans to get version,shares,etc.
 	impackets psexec
-	smb exploits - eternal blue ,etc.
+	smb exploits - eternal blue ,netapietc : look at os version
 
 port 53,88,389,464,3268,3269 (kerberos,ldap)
 	ldapsearch
