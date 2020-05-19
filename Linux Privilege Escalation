@@ -1,0 +1,27 @@
+SUID-SGID files
+	find / -perm -u=s -exec ls -l {} \; 2>/dev/null
+	find / -perm -g=s -exec ls -l {} \; 2>/dev/null
+	find / -perm 6000 exec ls -l {} \; 2>/dev/null
+Sudo
+	sudo -l
+	sudo -u user2 ./runme.sh
+Kernel exploits
+	uname -a && cat /etc/issue
+	linuxprivchecker.py https://github.com/sleventyeleven/linuxprivchecker
+	searchsploit
+Clear-text or hashed or encrypted crendentials
+	config files
+	passwords reuse
+	databases - eg. mysql
+Vulnerable binaries
+	searchsploit
+	suid-sgid binaries
+Path Hijacking
+	suid-sgid binaries and scripts
+	cron jobs - pspy
+	incomplete file paths of binaries and scripts
+	string or cat binaires or scripts respectively
+Binaries and scripts started/run with elevated/incorrect privileges
+	eg. mysql should be run by mysql user and not root
+Docker
+Writable sensitive files
