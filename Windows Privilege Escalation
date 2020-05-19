@@ -1,0 +1,27 @@
+Cleartext or hashed or encrypted or enumerated credentials
+	impacket psexec
+	smbclient
+	evil-winrm
+	powershell login script
+	rdesktop
+	databases,mail servers
+	vnc
+
+Write permissions on startup binaries
+	accesschkold.exe : https://github.com/ankh2054/windows-pentest/tree/master/Privelege
+
+Winpeas : https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS/winPEASexe/winPEAS/bin/Obfuscated%20Releases
+
+Vulnerable Progam Files softwares
+
+Hidden files
+	dir -force : in powershell
+	dir /a : in cmd
+	
+Active directory
+	https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md
+	bloodhound
+	aclpwn
+	analyse user groups and their scope -- whoami /all
+
+Running processes
