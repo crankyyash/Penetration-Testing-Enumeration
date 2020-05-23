@@ -14,7 +14,9 @@ port 80,443 or any http/https port (eg. 8080)
 	examine exifdata of images
 	switch GET with POST
 	scrape potential usernames, generate usernames list from scraped users' full names
+	use cewl to generate a list of possible passwords from a web page
 	searchsploit
+	port knocking clues
 
 port 110 pop3
 	telnet ip port
