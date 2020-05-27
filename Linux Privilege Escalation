@@ -9,6 +9,7 @@ Kernel exploits
 	uname -a && cat /etc/issue
 	linuxprivchecker.py https://github.com/sleventyeleven/linuxprivchecker
 	searchsploit
+	dirty cow, udev
 Clear-text or hashed or encrypted crendentials
 	config files
 	passwords reuse
@@ -22,6 +23,10 @@ Path Hijacking
 	incomplete file paths of binaries and scripts
 	string or cat binaires or scripts respectively
 Binaries and scripts started/run with elevated/incorrect privileges
+	ps aux | grep root
 	eg. mysql should be run by mysql user and not root
 Docker
 Writable sensitive files
+	World-writable files find / -not type l -perm -o+w -exec ls -lad {} \; 2>/dev/null | grep -v proc | grep -v sys | grep -v -dev
+	World-writable directories find / -type d \( -perm -g+w -or -perm -o+w \) -exec ls -adl {} \;
+	Files writable by current user find / -writable -exec ls -lad {} \; 2>/dev/null | grep -v proc | grep -v sys
