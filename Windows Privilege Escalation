@@ -9,6 +9,10 @@ Cleartext or hashed or encrypted or enumerated credentials
 
 Write permissions on startup binaries
 	accesschkold.exe : https://github.com/ankh2054/windows-pentest/tree/master/Privelege
+        accesschkold.exe /accepteula -ucqvw "Authenticated Users" *
+
+Custom admin-made scripts writable by unprivileged user
+        cacls test.cmd
 
 Winpeas : https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS/winPEASexe/winPEAS/bin/Obfuscated%20Releases
 
@@ -25,3 +29,5 @@ Active directory
 	analyse user groups and their scope -- whoami /all
 
 Running processes
+DLL Hijacking
+Third Party vulnerable drivers
