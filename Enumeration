@@ -1,22 +1,40 @@
+port 22 or any ssh port
+	openssl keys bruteforce
+	hydra ssh bruteforce
+		hydra -L users.txt -P pass.txt ssh://ip
+	searchsploit
+
 port 80,443 or any http/https port (eg. 8080)
 	nmap
+		nmap -sV -oN nmap-small ip
+		sudo nmapAutomator ip All
+		nmap --script=<script-name> ip
 	nikto -host ip -port port
 	gobuster dir scan
+		gobuster -u ip -w /usr/share/wordlists/dirb/big.txt -x php,txt,html -o extensive_scan.txt
 	gobuster vhost scan
 	edit /etc/hosts
 	dirbuster
 	wfuzz file extensions
+		wfuzz -c -z file,/usr/share/wordlists/dirb/big.txt --hc 404,403 ip -o out.txt
 	analyse cookies,requests with burpsuite
 	bruteforce credentials with hydra
+		hydra -l username -P pass.txt http-form-post "/uri:request:invalid login"
 	web vuln - lfi,rfi,sql,xss,code execution,file upload,xxe
 	javascript files
 	view-source
 	examine exifdata of images
+		exiftool img.png
 	switch GET with POST
 	scrape potential usernames, generate usernames list from scraped users' full names
 	use cewl to generate a list of possible passwords from a web page
+		cewl -w pass-wordlist.txt <url>
 	searchsploit
+		searchsploit tomcat manager
+		searchsploit -x <path/to/436.c>
+		searchsploit -m <path/to/742.c>
 	port knocking clues
+		hping -S <ip> -p <port_number> -c 1
 
 port 110 pop3
 	telnet ip port
@@ -25,17 +43,26 @@ port 110 pop3
 		QUIT
 	searchsploit
 	msfconsole
+	hydra bruteforce
+		hydra -L users.txt -P pass.txt pop3://ip
 
 port 139,445
 	nmap scripts
 	smbmap
+		smbmap -H 10.11.1.13
 	smbclient
+		smbclient -L //10.11.1.13
+		smbclient -L //10.11.1.14 -U <username>
+		smbclient //10.11.1.22/SHARE_NAME -U <username>
+		smbclient //10.11.1.24\\C$ -U <username>
 	msfconsole auxiliary scans to get version,shares,etc.
 	impackets psexec,lookupsid
 	smb exploits - eternal blue ,netapietc : look at os version
 	searchsploit
 	rpcclient
+		rpcclient -U "" <ip>
 	enum4linux
+		enum4linux <ip>
 
 port 53,88,389,464,3268,3269 (kerberos,ldap)
 	ldapsearch
