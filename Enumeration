@@ -1,5 +1,6 @@
 port 22 or any ssh port
 	openssl keys bruteforce
+	openssl authorization bypass exploit
 	hydra ssh bruteforce
 		hydra -L users.txt -P pass.txt ssh://ip
 	searchsploit
