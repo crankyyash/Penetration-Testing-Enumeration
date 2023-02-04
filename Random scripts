@@ -1,0 +1,4 @@
+#Create folder for each ip in a txt document and save nmap scan in it using powershell
+[28-09-2022 17:27] Yash Mehta
+$files = Get-Content -Path C:\Users\yash\Documents\temp\all-urls.txt
+ForEach ($file in $files) { New-Item -Name $file -Path ".\2-cycle\" -ItemType "directory" | Out-Null; nmap -Pn $file -oN .\2-cycle\$file\nmap-Pn.txt; }
