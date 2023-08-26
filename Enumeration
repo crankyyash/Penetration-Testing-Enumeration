@@ -18,6 +18,10 @@ port 80,443 or any http/https port (eg. 8080)
 	dirbuster
 	wfuzz file extensions
 		wfuzz -c -z file,/usr/share/wordlists/dirb/big.txt --hc 404,403 ip -o out.txt
+	ffuf
+		ffuf -u "https://test.com/FUZZ" -mc 200,301 -e .txt,.sql,.zip -of csv - test.csv
+		for urls in urls-ffuf.txt, do bulk ffuf:
+		ffuf.exe -w directory-list-2.3-medium.txt:FUZZ -e .txt,.sql,.zip,.jsp,.aspx,.php,.xml,.tar.gz,.xlsx,.csv -w ursl-ffuf.txt:URL -u URL/FUZZ -of csv -o ffuf-all-output.csv -v -ic
 	analyse cookies,requests with burpsuite
 	bruteforce credentials with hydra
 		hydra -l username -P pass.txt http-form-post "/uri:request:invalid login"
