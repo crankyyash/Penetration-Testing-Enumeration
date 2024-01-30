@@ -14,10 +14,10 @@ for /f "delims=" %%i in (subnets.txt) do (
         echo. & echo Trying !octet1!.!octet2!.!octet3!.%%k
         ping -n 1 -w 1000 !octet1!.!octet2!.!octet3!.%%k >nul  
         if !errorlevel! == 0 (
-REM            echo !octet1!.!octet2!.!octet3!.%%k UP >> C:\Users\Admin\Documents\exceptions-tools-scripts\ping-UP.txt
-			echo !octet1!.!octet2!.!octet3!.%%k >> C:\Users\Admin\Documents\exceptions-tools-scripts\ping-UP.txt
+REM            echo !octet1!.!octet2!.!octet3!.%%k UP >> ping-UP.txt
+			echo !octet1!.!octet2!.!octet3!.%%k >> ping-UP.txt
         ) else (
-            echo !octet1!.!octet2!.!octet3!.%%k DOWN >> C:\Users\Admin\Documents\exceptions-tools-scripts\ping-DOWN.txt
+            echo !octet1!.!octet2!.!octet3!.%%k DOWN >> ping-DOWN.txt
         )
     )
 )
