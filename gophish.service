@@ -1,0 +1,10 @@
+[Unit]
+Description=gophish service
+
+[Service]
+User=root
+WorkingDirectory=/tmp/Gophish/
+ExecStart=/tmp/Gophish/gophish
+
+[Install]
+WantedBy=multi-user.targe
